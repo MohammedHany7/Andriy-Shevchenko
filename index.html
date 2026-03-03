@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Andriy Shevchenko Fan Zone</title>
+</head>
+<body>
+
+    <center>
+        <marquee scrollamount="10">⚽ GOAL! GOAL! GOAL! SHEVCHENKO IS THE G.O.A.T! ⚽</marquee>
+        <h1>The great stallion PAGE</h1>
+        <p><i>The legendary #7 striker from AC Milan and Ukraine.</i></p>
+    </center>
+
+    <hr>
+
+    <h3>Player Profile</h3>
+    <dl>
+        <dt>Full Name</dt>
+        <dd>Andriy Mykolayovitch Shevchenko</dd>
+        
+        <dt>Main Club</dt>
+        <dd>AC Milan</dd>
+        
+        <dt>Awards</dt>
+        <dd>Ballon d'Or (2004)</dd>
+        <img src="\Users\Mohamed\OneDrive\Desktop\image.jpg" alt="Sheva">
+    </dl>
+
+    <hr>
+
+    <h3>Career Statistics</h3>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Team</th>
+                <th>Appearances</th>
+                <th>Goals</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Dynamo Kyiv</td>
+                <td>249</td>
+                <td>124</td>
+            </tr>
+            <tr>
+                <td>AC Milan</td>
+                <td>322</td>
+                <td>175</td>
+            </tr>
+            <img src="\Users\Mohamed\OneDrive\Desktop\images.jpg" alt="sheva">
+        </tbody>
+    </table>
+
+    <br>
+
+    <details>
+        <summary><b>Click to watch a (placeholder) highlight</b></summary>
+        <p>Since we can't use CSS to resize videos, it will just be its natural size!</p>
+        <video width="320" controls>
+            <source src="movie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <br>
+        <label>Listen to the stadium crowd:</label>
+        <audio controls>
+            <source src="crowd.mp3" type="audio/mpeg">
+        </audio>
+    </details>
+
+    <hr>
+
+    <h3>Live Goal Counter</h3>
+    <p>Simulate Shevchenko's energy levels during a match:</p>
+    
+    <label>Stamina:</label>
+    <meter id="stamina" min="0" max="100" low="20" high="80" value="100"></meter>
+    
+    <br><br>
+    
+    <button onclick="scoreGoal()">SCORE A GOAL!</button>
+    <p>Goals Scored This Session: <mark id="goalCount">0</mark></p>
+
+    <hr>
+
+    <blockquote>
+        "Football is a game of <small>intelligence</small>, <small>heart</small>, and <small>skill</small>."
+    </blockquote>
+    
+    <p>To view the secret stats, press <kbd>Alt</kbd> + <kbd>S</kbd> (Note: Doesn't actually work, just for the tag!)</p>
+
+    <script>
+        var goals = 0;
+        function scoreGoal() {
+            goals = goals + 1;
+            document.getElementById('goalCount').innerText = goals;
+            
+            // Lower the stamina meter
+            var s = document.getElementById('stamina');
+            s.value = s.value - 10;
+            
+            if(s.value <= 0) {
+                alert("Sheva is tired! He needs a sub.");
+                s.value = 100; // Reset
+            }
+        }
+    </script>
+
+</body>
+</html>
